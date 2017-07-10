@@ -1,0 +1,10 @@
+#BEGIN
+# Number of BCs
+Nbc 2
+# Number of loadcases per BC
+Nlc 2 1 
+# BoundingBox xmin xmax ymin ymax zmin zmax
+BB -0.9090909090909091 100.9090909090909 -51.08695652173913 1.0869565217391326 -1.0869565217391304 51.08695652173913
+# Descretization Nx Ny Nz Nlvs
+DC 225 97 97 5 
+#END

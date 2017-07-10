@@ -1,0 +1,115 @@
+Debug:	 ../src/model_2/input/optimization_data.txt
+Debug:	 Found BC 2 and RHS 1 and LC 2
+Debug:	 Found BC 1 and RHS 2 and LC 3
+Debug:	 Found BC 1 and RHS 1 and LC 1
+GUIXml parse ../src/model_2/input/../data.xml
+	* * *   Print xml data   * * *
+
+	LoadCases: 0
+		 Id: af4c8fe0-266b-2070-8fe6-3e5387cd0b3d
+	LoadDomain: 0
+		 Position vec: x:95.000000; y:-25.000000; z:25.000000.
+		 Magnitude vec: x:0.000000; y:-1.000000; z:0.000000.
+	LoadCases: 1
+		 Id: 93d9b13b-bb1c-52fa-9a9f-cc3de6338b70
+	LoadDomain: 0
+		 Position vec: x:-2.500000; y:-25.000000; z:25.000000.
+		 Magnitude vec: x:1.000000; y:-1.000000; z:2.000000.
+	LoadCases: 2
+		 Id: 9dae7c08-cc3f-3293-cff1-a0f7bdf42edd
+	LoadDomain: 0
+		 Position vec: x:95.000000; y:-25.000000; z:25.000000.
+		 Magnitude vec: x:22.000000; y:23.000000; z:24.000000.
+	Response: 0
+		 Type: MASS
+		 Id: 383efab3-0afe-9d31-5f98-2b1d750a6118
+	Response: 1
+		 Type: DISPLACEMENTS
+		 Id: fbb98271-c074-cf98-34fe-27859f5a61f0
+	Properties: 0
+		 LoadCaseIndex: 0
+		 Direction: total
+		 Coordinate vec: x:52.500000; y:0.507870; z:-0.092256.
+	Response: 2
+		 Type: DISPLACEMENTS
+		 Id: a70225ba-9815-1447-4de4-1d01ae6689d2
+	Properties: 0
+		 LoadCaseIndex: 1
+		 Direction: z
+		 Coordinate vec: x:52.500000; y:0.790651; z:1.837704.
+	Response: 3
+		 Type: CENTER_OF_GRAVITY
+		 Id: afaca1ef-6bbe-411b-fe48-917e709b6fab
+	Constraint: 0
+		 ResponseId: fbb98271-c074-cf98-34fe-27859f5a61f0
+		 ResponseIndex: 1
+		 LowerBound: 0.000000
+		 UpperBound: 1.200000
+	Constraint: 1
+		 ResponseId: afaca1ef-6bbe-411b-fe48-917e709b6fab
+		 ResponseIndex: 3
+		 LowerBound: 11.000000
+		 UpperBound: 12.000000
+	Constraint: 2
+		 ResponseId: a70225ba-9815-1447-4de4-1d01ae6689d2
+		 ResponseIndex: 2
+		 LowerBound: 0.000000
+		 UpperBound: 0.990000
+	Material: 0
+		 name: Titanium
+		 value: Titanium
+		 density: 4506.000000
+		 poisson: 0.320000
+		 stress: 0.000000
+		 key: 2ae9c46c-f6e2-28ba-f20b-8814b7ff3e86
+	* * *  End of print xml data   * * *
+
+
+
+
+* * *  Optimization loop. Itr 0. * * *
+for BC_1.bin Construct stiffness matrix
+	 for RHS_1_1_1.bin
+		 Skip (No property). Responses[0], Type MASS, Id 383efab3-0afe-9d31-5f98-2b1d750a6118
+		 Use Responses[1], Type DISPLACEMENTS
+			 Construct adjoint Vector and solve K1*LAM11 = D11
+			 use BC_1.bin and RHS_1_1_1.bin
+		 Skip (Other LC). Responses[2], Type DISPLACEMENTS, Id a70225ba-9815-1447-4de4-1d01ae6689d2
+		 Skip (No property). Responses[3], Type CENTER_OF_GRAVITY, Id afaca1ef-6bbe-411b-fe48-917e709b6fab
+	 for RHS_1_2_3.bin
+		 Skip (No property). Responses[0], Type MASS, Id 383efab3-0afe-9d31-5f98-2b1d750a6118
+		 Skip (Other LC). Responses[1], Type DISPLACEMENTS, Id fbb98271-c074-cf98-34fe-27859f5a61f0
+		 Skip (Other LC). Responses[2], Type DISPLACEMENTS, Id a70225ba-9815-1447-4de4-1d01ae6689d2
+		 Skip (No property). Responses[3], Type CENTER_OF_GRAVITY, Id afaca1ef-6bbe-411b-fe48-917e709b6fab
+for BC_2.bin Construct stiffness matrix
+	 for RHS_2_1_2.bin
+		 Skip (No property). Responses[0], Type MASS, Id 383efab3-0afe-9d31-5f98-2b1d750a6118
+		 Skip (Other LC). Responses[1], Type DISPLACEMENTS, Id fbb98271-c074-cf98-34fe-27859f5a61f0
+		 Use Responses[2], Type DISPLACEMENTS
+			 Construct adjoint Vector and solve K2*LAM22 = D22
+			 use BC_2.bin and RHS_2_1_2.bin
+		 Skip (No property). Responses[3], Type CENTER_OF_GRAVITY, Id afaca1ef-6bbe-411b-fe48-917e709b6fab
+
+* * *  Optimization loop. Itr 1. * * *
+for BC_1.bin Construct stiffness matrix
+	 for RHS_1_1_1.bin
+		 Skip (No property). Responses[0], Type MASS, Id 383efab3-0afe-9d31-5f98-2b1d750a6118
+		 Use Responses[1], Type DISPLACEMENTS
+			 Construct adjoint Vector and solve K1*LAM11 = D11
+			 use BC_1.bin and RHS_1_1_1.bin
+		 Skip (Other LC). Responses[2], Type DISPLACEMENTS, Id a70225ba-9815-1447-4de4-1d01ae6689d2
+		 Skip (No property). Responses[3], Type CENTER_OF_GRAVITY, Id afaca1ef-6bbe-411b-fe48-917e709b6fab
+	 for RHS_1_2_3.bin
+		 Skip (No property). Responses[0], Type MASS, Id 383efab3-0afe-9d31-5f98-2b1d750a6118
+		 Skip (Other LC). Responses[1], Type DISPLACEMENTS, Id fbb98271-c074-cf98-34fe-27859f5a61f0
+		 Skip (Other LC). Responses[2], Type DISPLACEMENTS, Id a70225ba-9815-1447-4de4-1d01ae6689d2
+		 Skip (No property). Responses[3], Type CENTER_OF_GRAVITY, Id afaca1ef-6bbe-411b-fe48-917e709b6fab
+for BC_2.bin Construct stiffness matrix
+	 for RHS_2_1_2.bin
+		 Skip (No property). Responses[0], Type MASS, Id 383efab3-0afe-9d31-5f98-2b1d750a6118
+		 Skip (Other LC). Responses[1], Type DISPLACEMENTS, Id fbb98271-c074-cf98-34fe-27859f5a61f0
+		 Use Responses[2], Type DISPLACEMENTS
+			 Construct adjoint Vector and solve K2*LAM22 = D22
+			 use BC_2.bin and RHS_2_1_2.bin
+		 Skip (No property). Responses[3], Type CENTER_OF_GRAVITY, Id afaca1ef-6bbe-411b-fe48-917e709b6fab
+!!!The End!!!
